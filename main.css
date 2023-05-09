@@ -1,0 +1,35 @@
+
+h1{
+    color: yellow;
+}
+p{
+    color: aqua;
+}
+.contenaire{
+
+background-color:  purple;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: fit-content;
+}
+a{
+    color: white;
+}
+strong{
+    color: yellow;
+    font-size: large;
+}
+
+th{
+    color: aliceblue;
+    border-style: solid;
+    border-color: yellowgreen;
+}
+
+td{
+    color: aliceblue;
+    border-style: solid;
+    border-color: yellowgreen;
+
+}

@@ -29,12 +29,14 @@
                 "<th>Prix</th>",
                 "<th>Quantité</th>",
                 "<th>Total</th>",
+                "<th>Suprimer</th>",
             "</thead>",
             "</tbody>";
             $totalGeneral=0;     
             
             // lis le tableau en prenant index comme variable  clée et product comme variable valeur
         foreach ( $_SESSION['products'] as $index => $product) {
+            ;
             echo "<tr>",
                     "<td>".$index."</td>",
 
@@ -43,31 +45,52 @@
                     // number_fortmat : gére le format  du prix en limitant a 2 decimal et en prenant , en separateur des decimaux
                     "<td>".number_format($product['price'],2, "," ,"&nbsp;" )."&nbsp;€</td>",
                     "<td>".$product['qtt']."</td>",
-                    "<td>".number_format($product['total'],2, "," ,"&nbsp;" )."&nbsp;€</td>",
-                    "</tr>";
+                    "<td>".number_format($product['total'],2, "," ,"&nbsp;" )."&nbsp;€</td>";
                     // ajout la valeur du tableau total a la clée  total
-                    $totalGeneral+=  $product['total'];       
+                    $totalGeneral+=  $product['total'];
+                    
+                ?> 
+                    <td>
+                        <form action="./resset.php" method="post">
+                        <!-- <input type="submit" name="suprimer" value=""> -->
+                        <button type="submit" name="suprimer" value="<?=$index?>" > suprimer</button>
+                        </form>
+                    </td>
+                </tr>
+
+                
+                    <?php
+
+                    if (isset($index)) {
+                        $i= $index+1;   
+                    }
+ 
+
+
+      
 
         }
+       
         echo    "<tr>",
-                "<td colspan=4> Total général: </td>",
+                "<td colspan=2> Total général: </td>",
                 "<td><strong>" .number_format($totalGeneral,2,",","&nbsp;").
                   "&nbsp;€</strong></td>",
+                  "<td colspan=2> Nombre de produit total " .$i."</td>",
                   "</tr>",
         "</tbody>",
             "</table>";
     }
 
-   
+
 ?>
 
 
 
 <a href="./index.php">retournez ajoutez des produit  <strong> cliquer  vite !!!! <strong></a>
 
-<form action="./reset.php" method="post">
+<form action="./resset.php" method="post">
 
-<input type="submit" name="reset" value="resset">
+<input type="submit" name="resset" value="resset">
 
 
 </form>

@@ -36,7 +36,7 @@
             
             // lis le tableau en prenant index comme variable  clée et product comme variable valeur
         foreach ( $_SESSION['products'] as $index => $product) {
-            ;
+            
             echo "<tr>",
                     "<td>".$index."</td>",
 
@@ -60,10 +60,10 @@
 
                 
                     <?php
+                    $nombreDeProduits=count($_SESSION['products']) ;
 
-                    if (isset($index)) {
-                        $i= $index+1;   
-                    }
+
+
  
 
 
@@ -75,7 +75,7 @@
                 "<td colspan=2> Total général: </td>",
                 "<td><strong>" .number_format($totalGeneral,2,",","&nbsp;").
                   "&nbsp;€</strong></td>",
-                  "<td colspan=2> Nombre de produit total " .$i."</td>",
+                  "<td colspan=2> Nombre de produit total " .$nombreDeProduits."</td>",
                   "</tr>",
         "</tbody>",
             "</table>";

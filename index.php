@@ -13,14 +13,13 @@
 <?php
  session_start();
 
-  foreach ( $_SESSION['products'] as $index => $product) {
-}
-$i=$index +1; 
+$nombreDeProduits=count($_SESSION['products']) ;
+
 ?>
     <div class="contenaire">
         
         <h1>Ajouter un produit</h1>
-        <h2> Il a déjas <?=$i?> produit dans nos offre </h2>
+        <h2> Il a déjas <?=$nombreDeProduits?> produit dans nos offre </h2>
         <form action="traitement.php" method="post">
             <!-- transfer le formulaire en tableau a la page php :traitement.php dans la super constante $_POST sous la clée submit* -->
             <p>

@@ -14,9 +14,11 @@ foreach ($_POST as $key => $value)
                 {
                     $qtt=$product['qtt'];
                     $qtt++;
-                    $arayQtt= [ "qtt"=>$qtt];
-                    array_replace($product,$arayQtt );
-                    die(var_dump($product));
+                    $_SESSION["products"][$index]["qtt"] =$qtt;
+                    $_SESSION["products"][$index]["total"] = $_SESSION["products"][$index]["qtt"]* $_SESSION["products"][$index]["price"];
+
+
+
 
                 }
             }
@@ -31,12 +33,14 @@ foreach ($_POST as $key => $value)
                 if ($index==$value)
                 {
 
-                    $qtt=$product['qtt'];
-                    $qtt--;
-                    $arayQtt= [ ""=>$qtt];
-                    array_replace($product,$arayQtt);
-                    die(var_dump($_SESSION));
-
+                        $qtt= $product['qtt'];
+                        $qtt--;
+                        if ($qtt<=0) 
+                        {
+                            $qtt =1;
+                        }
+                        $_SESSION["products"][$index]["qtt"] =$qtt;
+                        $_SESSION["products"][$index]["total"] = $_SESSION["products"][$index]["qtt"]* $_SESSION["products"][$index]["price"];                    
                 }
           
             }

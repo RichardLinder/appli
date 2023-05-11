@@ -43,8 +43,15 @@
                     // prend dna le tableau product la valeur name puis prix , qtt, total
                     "<td>".$product['name']."</td>",
                     // number_fortmat : gére le format  du prix en limitant a 2 decimal et en prenant , en separateur des decimaux
-                    "<td>".number_format($product['price'],2, "," ,"&nbsp;" )."&nbsp;€</td>",
-                    "<td>".$product['qtt']."</td>",
+                    "<td>".number_format($product['price'],2, "," ,"&nbsp;" )."&nbsp;€</td>";
+
+                    ?>
+                    <td> <form action="./quantite.php" method="post">
+                    <button type="submit" name="moins" value="<?=$index?>" >-</button>
+                    <?=$product['qtt']?>
+                    <button type="submit" name="plus" value="<?=$index?>" >+</button>
+                    </form> </td>'
+                 <?php   echo
                     "<td>".number_format($product['total'],2, "," ,"&nbsp;" )."&nbsp;€</td>";
                     // ajout la valeur du tableau total a la clée  total
                     $totalGeneral+=  $product['total'];

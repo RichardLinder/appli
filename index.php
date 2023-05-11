@@ -13,7 +13,12 @@
 <?php
  session_start();
 
-$nombreDeProduits=count($_SESSION['products']) ;
+ if (isset($_SESSION['products'])) {
+
+    $nombreDeProduits=count($_SESSION['products']) ;
+ }
+
+
 
 ?>
     <div class="contenaire">
@@ -44,8 +49,10 @@ $nombreDeProduits=count($_SESSION['products']) ;
                 <!--  designe la valeur * a submit  -->
                 </p>
             </p>
-        </form>
-
+        <!-- </form>
+        <p>
+            ?$message?>
+        </p> -->
         <a href=".\recap.php"> Verifier vos produit <strong> cliquer  vite !!!! <strong></a>
 
     </div>

@@ -55,6 +55,12 @@
         </p> -->
         <a href=".\recap.php"> Verifier vos produit <strong> cliquer  vite !!!! <strong></a>
 
+         <p> <?php if(!empty($_SESSION['verification']))
+         {
+            echo $_SESSION['verification']; 
+            } ?>
+        </p> 
+
     </div>
     
 </body>

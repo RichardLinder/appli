@@ -24,6 +24,11 @@
             ];
             // crée si il n'es pas déjas pressent  dans la variable général session un tableau product et y ajoute les element de la variable product  
             $_SESSION['products'][] =$product;
+
+            $_SESSION['verification'] = "Le produit a été ajouté";    
+        }else 
+        {
+            $_SESSION['verification'] = "echec de l'ajout du produit veuiller reasyer ";    
         }
 
 

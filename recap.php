@@ -46,10 +46,15 @@
                     "<td>".number_format($product['price'],2, "," ,"&nbsp;" )."&nbsp;€</td>";
 
                     ?>
+
                     <td> <form action="./quantite.php" method="post">
-                    <button type="submit" name="moins" value="<?=$index?>" >-</button>
-                    <?=$product['qtt']?>
-                    <button type="submit" name="plus" value="<?=$index?>" >+</button>
+                        <input type="hidden" name="action" value="moins">
+                    <button type="submit" name="index" value="<?=$index?>" >-</button>
+                    </form>
+                    <p><?=$product['qtt']?></p>
+                    <form action="./quantite.php" method="post">
+                        <input type="hidden" name="action" value="plus">
+                    <button type="submit" name="index" value="<?=$index?>" >+</button>
                     </form> </td>'
                  <?php   echo
                     "<td>".number_format($product['total'],2, "," ,"&nbsp;" )."&nbsp;€</td>";

@@ -16,6 +16,8 @@
  if (isset($_SESSION['products'])) {
 
     $nombreDeProduits=count($_SESSION['products']) ;
+ }else {
+    $nombreDeProduits=0;
  }
 
 

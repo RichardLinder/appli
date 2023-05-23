@@ -1,3 +1,13 @@
+<!-- 
+    definition de
+     requete http : demande d'action du navigateur vers le serveur qui lui renvois une reponse http
+
+    super globale :  variable , (contenaire) natif crée par php sous forme de tableau qui permet de avoir les info dans tout les page php
+
+    session supper global stockant les donné dans le serveur d'un utilisateur pour les avoir dans tout les page php par exemple site de comerce pannie d'achat conservé de page en page la session se finit a la fermeture du navigateur 
+
+    http/https : meme protolole mais le 1er es en clair et le 2e es encrypté avec le protocole SSL/TLS
+ -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
